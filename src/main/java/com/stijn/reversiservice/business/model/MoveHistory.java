@@ -1,14 +1,30 @@
 package com.stijn.reversiservice.business.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Data
 @Builder
-public class MoveHistory {
+@Entity
+@Table(name = "movehistory")
+@NoArgsConstructor
+@AllArgsConstructor
+public class MoveHistory implements Serializable {
 
-private List<Move> moveHistory;
+
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    @Column(name = "movelist")
+    @OneToMany(mappedBy = "id")
+    private List<Move> moveHistory;
+
 
 }

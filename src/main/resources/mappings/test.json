@@ -1,0 +1,11 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/move"
+  },
+  "response": {
+    "status": 200,
+    "body": true,
+    "headers" : { "Content-Type" : "application/json"}
+  }
+}

@@ -1,10 +1,17 @@
 package com.stijn.reversiservice.opponent;
 
 import com.stijn.reversiservice.business.model.Move;
+import com.stijn.reversiservice.business.model.MoveHistory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class OpponentService {
 
-    public void CallOpponentWith(Move move){
-//        call opponent here with Move
+    @Autowired
+    private OpponentClient opponentClient;
+
+    public void CallOpponentWith(MoveHistory moveHistory){
+    opponentClient.callOpponent(moveHistory);
     }
 }
